@@ -24,6 +24,20 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        adj_l {
+            bindings = <&lt 3 ESCAPE>;
+            key-positions = <40 39>;
+        };
+
+        adj_r {
+            bindings = <&lt 3 ESCAPE>;
+            key-positions = <41 42>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
