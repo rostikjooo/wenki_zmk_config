@@ -15,3 +15,7 @@
 include:
   - board: wenki44_left
   - board: wenki44_right
+  - board: wenki44_left
+    shield: settings_reset
+  - board: wenki44_right
+    shield: settings_reset
