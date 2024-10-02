@@ -13,9 +13,15 @@
 #define RSE 2
 #define ADJ 3
 
-&lt { quick_tap_ms = <200>; };
+&mt {
+    quick-tap-ms = <180>;
+    tapping-term-ms = <250>;
+};
 
-&mt { quick_tap_ms = <200>; };
+&lt {
+    quick_tap_ms = <200>;
+    tapping-term-ms = <180>;
+};
 
 / {
     keymap {
