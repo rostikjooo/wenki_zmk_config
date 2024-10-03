@@ -28,12 +28,12 @@
         compatible = "zmk,combos";
 
         adj_l {
-            bindings = <&lt 3 ESCAPE>;
+            bindings = <&lt 2 ESCAPE>;
             key-positions = <40 39>;
         };
 
         adj_r {
-            bindings = <&lt 3 ESCAPE>;
+            bindings = <&lt 2 ESCAPE>;
             key-positions = <41 42>;
         };
     };
@@ -49,40 +49,19 @@
             //                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
 
             bindings = <
-&kp RG(RC(RS(NUMBER_4)))  &kp TAB     &kp Q               &kp W           &kp E        &kp R            &kp T          &kp Y        &kp U           &kp I          &kp O           &kp P               &kp LBKT              &mt RWIN RBKT
-                          &kp ESCAPE  &mt LEFT_COMMAND A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F      &kp G          &kp H        &mt RSHFT J     &mt RCTRL K    &mt LEFT_ALT L  &mt RGUI SEMICOLON  &mt RCMD SQT
-                          &kp GRAVE   &kp Z               &kp X           &kp C        &kp V            &kp B          &kp N        &kp M           &kp COMMA      &kp DOT         &kp FSLH            &kp NON_US_BACKSLASH
-                                                                          &lt RSE TAB  &mt LSHFT SPACE  &lt LWR RET    &lt LWR ESC  &mt RSHFT BSPC  &lt RSE ENTER
+&kp RG(RC(RS(NUMBER_4)))  &kp TAB     &kp Q               &kp W           &kp E        &kp R        &kp T        &kp Y        &kp U        &kp I        &kp O           &kp P               &kp LBKT              &mt RWIN RBKT
+                          &kp ESCAPE  &mt LEFT_COMMAND A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H        &mt RSHFT J  &mt RCTRL K  &mt LEFT_ALT L  &mt RGUI SEMICOLON  &mt RCMD SQT
+                          &kp GRAVE   &kp Z               &kp X           &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT         &kp FSLH            &kp NON_US_BACKSLASH
+                                                                          &lt 1 TAB    &lt 1 SPACE  &lt 1 RET    &lt 1 ENTER  &lt 1 BSPC   &lt 1 ENTER
             >;
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |     |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 |
-            //       |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
-            //       |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        Low {
             bindings = <
-&trans  &kp UNDER       &kp F1    &kp F2  &kp F3    &kp F4    &kp F5       &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp F11          &mt RGUI F12
-        &mt LCTRL PLUS  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &mt RCTRL MINUS
-        &mt LALT EQUAL  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &trans
-                                          &trans    &trans    &trans       &trans     &trans    &trans
-            >;
-        };
-
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |     | NMLK |  /  |  7  |  8  |  9  |  -  |   | VOLU| HOME| PRSC| PGUP| SCLK| CLCK|     |
-            //       | CTRL |  *  |  4  |  5  |  6  |  +  |   | MUT | LEFT|  UP | RGHT| INS | APP |
-            //       |      |  0  |  1  |  2  |  3  |  .  |   | VOLD| END | DOWN| PGDN| PAUS|     |
-            //                          |     |     | ADJ |   | ADJ |     |     |
-
-            bindings = <
-&trans  &kp KP_NUM       &kp KP_SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS    &kp C_VOL_UP  &kp HOME  &kp PSCRN  &kp PG_UP  &kp SLCK         &kp CAPS         &trans
-        &mt LCTRL EQUAL  &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS     &kp C_MUTE    &kp LEFT  &kp UP     &kp RIGHT  &kp INS          &mt RCTRL K_APP
-        &trans           &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT      &kp C_VOL_DN  &kp END   &kp DOWN   &kp PG_DN  &kp PAUSE_BREAK  &trans
-                                                     &trans     &trans     &trans          &trans        &trans    &trans
+&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7                 &kp N8                     &kp N9                     &kp N0  &kp MINUS  &kp EQUAL
+        &trans     &trans  &trans  &trans  &trans  &trans    &kp LEFT  &mt RSHIFT DOWN_ARROW  &mt LEFT_CONTROL UP_ARROW  &mt RIGHT_ALT RIGHT_ARROW  &trans  &trans
+        &trans     &trans  &trans  &trans  &trans  &trans    &trans    &trans                 &trans                     &trans                     &trans  &trans
+                                   &trans  &trans  &trans    &trans    &trans                 &trans
             >;
         };
 
@@ -106,8 +85,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <2 2>;
+            then-layer = <2>;
         };
     };
 };
