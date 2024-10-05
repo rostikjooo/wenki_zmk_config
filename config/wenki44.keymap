@@ -28,12 +28,12 @@
         compatible = "zmk,combos";
 
         adj_l {
-            bindings = <&lt 2 ESCAPE>;
+            bindings = <&lt 3 ESCAPE>;
             key-positions = <40 39>;
         };
 
         adj_r {
-            bindings = <&lt 2 ESCAPE>;
+            bindings = <&lt 3 ESCAPE>;
             key-positions = <41 42>;
         };
     };
@@ -49,19 +49,28 @@
             //                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
 
             bindings = <
-&kp RG(RC(RS(NUMBER_4)))  &kp TAB     &kp Q               &kp W           &kp E        &kp R        &kp T            &kp Y          &kp U        &kp I        &kp O           &kp P               &kp LBKT       &kp RIGHT_BRACKET
+&kp RG(RC(RS(NUMBER_4)))  &kp TAB     &kp Q               &kp W           &kp E        &kp R        &kp T            &kp Y          &kp U        &kp I        &kp O           &kp P               &kp LBKT              &kp RIGHT_BRACKET
                           &kp ESCAPE  &mt LEFT_COMMAND A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G            &kp H          &mt RSHFT J  &mt RCTRL K  &mt LEFT_ALT L  &mt RGUI SEMICOLON  &kp SQT
-                          &kp GRAVE   &kp Z               &kp X           &kp C        &kp V        &kp B            &kp N          &kp M        &kp COMMA    &kp DOT         &kp FSLH            &kp BACKSLASH
-                                                                          &kp ENTER    &lt 1 SPACE  &kp BACKSPACE    &kp BACKSPACE  &lt 1 SPACE  &kp ENTER
+                          &kp GRAVE   &kp Z               &kp X           &kp C        &kp V        &kp B            &kp N          &kp M        &kp COMMA    &kp DOT         &kp FSLH            &kp NON_US_BACKSLASH
+                                                                          &lt 2 ENTER  &lt 1 SPACE  &kp BACKSPACE    &kp BACKSPACE  &lt 1 SPACE  &lt 2 ENTER
             >;
         };
 
         Low {
             bindings = <
-&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7          &kp N8        &kp N9           &kp N0  &kp MINUS  &kp EQUAL
-        &trans     &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
-        &trans     &trans  &trans  &trans  &trans  &trans    &trans    &trans          &trans        &trans           &trans  &trans
-                                   &trans  &trans  &trans    &trans    &trans          &trans
+&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7                &kp N8                 &kp N9           &kp N0    &kp MINUS  &kp EQUAL
+        &trans     &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN_ARROW        &kp UP_ARROW           &kp RIGHT_ARROW  &trans    &trans
+        &trans     &trans  &trans  &trans  &trans  &trans    &trans    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE   &kp PLUS  &trans
+                                   &trans  &trans  &trans    &trans    &trans                &trans
+            >;
+        };
+
+        symbols {
+            bindings = <
+&trans  &kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS        &kp STAR   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER  &kp PLUS
+        &trans     &trans    &trans  &trans    &trans      &trans         &trans     &kp MINUS       &kp EQUAL  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans
+        &trans     &trans    &trans  &trans    &trans      &trans         &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans
+                                     &trans    &trans      &trans         &trans     &trans          &trans
             >;
         };
 
@@ -85,8 +94,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <2 2>;
-            then-layer = <2>;
+            if-layers = <3 3>;
+            then-layer = <3>;
         };
     };
 };
